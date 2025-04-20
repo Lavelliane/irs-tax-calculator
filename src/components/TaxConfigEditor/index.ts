@@ -1,0 +1,1 @@
+export { TaxConfigEditor } from './TaxConfigEditor'; 
