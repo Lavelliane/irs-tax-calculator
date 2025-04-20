@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IRS Tax Calculator - Form 1040
+
+A modern, responsive web application for calculating federal income taxes based on IRS Form 1040. This calculator helps users estimate their tax liability by filling out a simplified version of the IRS Form 1040.
+
+## Features
+
+- **Modern UI**: Built with Next.js and styled with Tailwind CSS for a clean, responsive interface
+- **Interactive Forms**: User-friendly forms for entering tax information
+- **State Management**: Uses Zustand for persistent state management
+- **Modern Icons**: Uses Lucide React for beautiful SVG icons
+- **Real-time Calculations**: Instant tax calculations based on the latest tax brackets and rules
+- **Collapsible Sections**: Organized form sections that can be expanded or collapsed
+- **Dark Mode Support**: Supports both light and dark themes
+- **Data Persistence**: Form data persists through page refreshes using local storage
+
+## Current Components
+
+- **Filing Status & Dependents**: Choose filing status and enter information about dependents
+  - Filing status selection (Single, Married filing jointly, etc.)
+  - Dependent status
+  - Number of dependents qualifying for child tax credit
+  - Number of dependents qualifying for other dependent tax credit
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18.0.0 or later
+- npm or yarn or bun
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/irs-tax-calculator.git
+   cd irs-tax-calculator
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   bun install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   bun dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx     # Main layout component
+│   ├── page.tsx       # Home page (serves as the main tax form)
+│   └── globals.css    # Global styles
+├── components/
+│   └── tax-form/      # Tax form components
+│       ├── FilingStatus.tsx      # Filing status and dependents component
+│       ├── TaxCalculator.tsx     # Tax calculation and results component
+│       └── icons/                # Icon components
+│           └── QuestionMarkIcon.tsx  # Help icon component
+├── hooks/
+│   ├── useTaxForm.ts          # Custom hook wrapping the Zustand store
+│   └── useTaxFormStore.ts     # Zustand store for state management
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- React
+- Tailwind CSS
+- Zustand (State management)
+- Lucide React (Icons)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Planned Features
 
-## Learn More
+- Income section (wages, interest, dividends, etc.)
+- Deductions section (standard deduction or itemized)
+- Credits section (child tax credit, education credits, etc.)
+- Detailed tax breakdown
+- Printable tax summary
+- Save/load functionality for tax information
 
-To learn more about Next.js, take a look at the following resources:
+## Disclaimer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This calculator is for informational purposes only and should not be considered tax advice. For accurate tax information, please consult a tax professional or refer to the official IRS documentation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
