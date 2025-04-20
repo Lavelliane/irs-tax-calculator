@@ -180,7 +180,7 @@ export default function TaxBreakdown() {
   useEffect(() => {
     setAgi(getTotalIncome(taxFormState) - getAdjustmentsToIncome(taxFormState));
     setDeduction(totalDeduction);
-    setTaxableIncome(calculateIncomeTax());
+    setTaxableIncome(Math.max(0, calculateIncomeTax()));
   }, [taxFormState, qbiDeduction, taxFormState.filingStatus]);
   
   return (
