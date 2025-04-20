@@ -5,14 +5,6 @@ import { ChevronUp, ChevronDown } from 'lucide-react';
 import QuestionMarkIcon from './icons/QuestionMarkIcon';
 import { useTaxFormStore } from '@/hooks/useTaxFormStore';
 
-type FilingStatusOption = 
-  | 'Single' 
-  | 'Married filing jointly' 
-  | 'Married filing separately' 
-  | 'Head of household' 
-  | 'Qualifying widow(er)';
-
-type DependentOption = 'Yes' | 'No';
 
 export default function FilingStatus() {
   const [isExpanded, setIsExpanded] = useState(true);
